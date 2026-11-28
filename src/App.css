@@ -1,4 +1,3 @@
-
 .app {
   min-height: 100vh;
   display: flex;
@@ -177,7 +176,6 @@ button:disabled {
   }
 }
 
-
 /* PDF Preview */
 
 .preview-section {
@@ -215,14 +213,36 @@ button:disabled {
   height: 750px;
   border: 1px solid #d5d9de;
   border-radius: 8px;
-  overflow: hidden;
+  overflow-y: auto;
   background: #525659;
 }
 
-.pdf-viewer iframe {
+.pdf-pages {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+}
+
+.pdf-page-canvas {
+  display: block;
   width: 100%;
-  height: 100%;
-  border: none;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 25%);
+}
+
+.pdf-preview-status,
+.pdf-preview-error {
+  margin: 12px;
+  color: white;
+  text-align: center;
+}
+
+.pdf-preview-error {
+  color: #ffd2d2;
 }
 
 .download-button {
